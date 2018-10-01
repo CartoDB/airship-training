@@ -4,10 +4,29 @@
   <title>Airship</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Include CSS  -->
+  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-style/v1.0.0-alpha.44/airship.css">
+
+  <!-- Include Icons -->
+  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-icons/v1.0.0-alpha.44/icons.css">
+
   <!-- Our CSS -->
   <link rel="stylesheet" href="src/main.css">
 </head>
 <body>
+  <div class="as-flag">
+    <div class="as-flag__icon">
+      <i style="color: #80B622;" class="as-icon-alert-fill"></i>
+    </div>
+    <div class="as-flag__content">
+      <h4 class="as-body as-color--type-01">You are now connected</h4>
+      <p class="as-body as-color--type-03">You have been added to the group “New Store on this region”</p>
+    </div>
+  </div>
+  <as-switch id="switch-0" name="switch" title="switch"></as-switch>
+
+  <!-- Include Web Components -->
+  <script src="https://libs.cartocdn.com/airship-components/v1.0.0-alpha.44/airship.js"></script>
 
   <!-- Our code -->
   <script src="src/main.js"></script>
