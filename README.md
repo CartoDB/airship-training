@@ -68,5 +68,9 @@ Talk about other options to group items in a toolbar.
 
 Commit []
 
+7. Add a category widget
 
+Copy-paste from reference, first the tag, then the feeding.
+
+Commit []
 
