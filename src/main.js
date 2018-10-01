@@ -5,6 +5,9 @@ function onLoad () {
   handleTypeSelector();
 }
 
+let neighbourhoodFilter = '';
+let roomTypeFilter = '';
+
 function onCategoriesChanged (categories) {
   const categoriesWidget = document.getElementById('neighbourhoods');
   const data = categories.map((category) => {
@@ -35,7 +38,7 @@ function filterNeighbourhood (neighbourhoods) {
   } else {
     neighbourhoodFilter = '';
   }
-  applyFilter(neighbourhoodFilter);
+  combineFilters(neighbourhoodFilter);
 }
 
 // Applying filter to viz
@@ -96,7 +99,19 @@ function filterByType () {
   } else {
     roomTypeFilter = `$room_type in ['wadus']`;
   }
-  applyFilter(roomTypeFilter);
+  combineFilters(roomTypeFilter);
+}
+
+function combineFilters () {
+  let combinedFilter = '';
+  if (neighbourhoodFilter && roomTypeFilter) {
+    combinedFilter = `${neighbourhoodFilter} and ${roomTypeFilter}`;
+  } else if (neighbourhoodFilter) {
+    combinedFilter = neighbourhoodFilter;
+  } else if (roomTypeFilter) {
+    combinedFilter = roomTypeFilter
+  }
+  applyFilter(combinedFilter);
 }
 
 window.onload = onLoad;

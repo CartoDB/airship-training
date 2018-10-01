@@ -34,7 +34,8 @@ function loadMap (categoriesCb) {
     width: 8,
     color: opacity(rgb(0,0,255), 0.25),
     strokeWidth: 0,
-    @categories: viewportHistogram($neighbourhood_group, 1, 12)
+    @categories: viewportHistogram($neighbourhood_group, 1, 12),
+    @roomType: $room_type
   `);
 
   layer = new carto.Layer(dataset, source, viz);

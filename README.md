@@ -113,3 +113,9 @@ commit []
 Add filter code to switches but no filter management.
 
 Commit []
+
+13. Combine filters
+
+Filters are not working because they're not combined. Let's do it.
+
+Added room_type to viz to avoid net roundtrips.
