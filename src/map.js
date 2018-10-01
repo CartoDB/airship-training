@@ -33,9 +33,14 @@ function loadMap (categoriesCb) {
   viz = new carto.Viz(`
     width: 8,
     color: opacity(rgb(0,0,255), 0.25),
-    strokeWidth: 0
+    strokeWidth: 0,
+    @categories: viewportHistogram($neighbourhood_group, 1, 12)
   `);
 
   layer = new carto.Layer(dataset, source, viz);
   layer.addTo(map);
+  layer.on('updated', () => {
+    const categories = layer.viz.variables.categories.value;
+    categoriesCb && categoriesCb(categories);
+  }); 
 }
