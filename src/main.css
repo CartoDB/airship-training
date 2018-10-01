@@ -6,3 +6,8 @@
 .layer-selector .as-body {
   margin-bottom: 0;
 }
+
+.formula .as-body {
+  font: 24px/36px var(--font-family-base, Roboto, sans-serif);
+  font-weight: 100;
+}

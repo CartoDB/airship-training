@@ -22,7 +22,7 @@ function initMapboxGL () {
   map.addControl(nav, 'bottom-left');
 }
 
-function loadMap (categoriesCb) {
+function loadMap (categoriesCb, formulaCb) {
   const { username, apiKey, dataset } = account;
   carto.setDefaultAuth({
     user: username,
@@ -36,12 +36,17 @@ function loadMap (categoriesCb) {
     strokeWidth: 0,
     @categories: viewportHistogram($neighbourhood_group, 1, 12),
     @roomType: $room_type
+    @averagePrice: viewportAvg($price)
   `);
 
   layer = new carto.Layer(dataset, source, viz);
   layer.addTo(map);
   layer.on('updated', () => {
+    console.log(layer.viz.variables.averagePrice.value);
     const categories = layer.viz.variables.categories.value;
+    const averagePrice = layer.viz.variables.averagePrice.value;
     categoriesCb && categoriesCb(categories);
+    formulaCb && formulaCb(averagePrice);
+
   }); 
 }
