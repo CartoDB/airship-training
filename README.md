@@ -107,3 +107,9 @@ commit []
 Where we learn to add custom CSS code.
 
 commit []
+
+12. Add filtering to switches
+
+Add filter code to switches but no filter management.
+
+Commit []
