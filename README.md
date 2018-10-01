@@ -101,3 +101,9 @@ Commit []
 Add the simplest content to the markup
 
 commit []
+
+11. Add switches
+
+Where we learn to add custom CSS code.
+
+commit []
