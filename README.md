@@ -119,3 +119,17 @@ Commit []
 Filters are not working because they're not combined. Let's do it.
 
 Added room_type to viz to avoid net roundtrips.
+
+Commit []
+
+14. Add formula widget
+
+Commit []
+
+15. Change toolbar color
+
+Show how to do it via CSS variable and simple CSS overwrite.
+
+Commit []
+
+

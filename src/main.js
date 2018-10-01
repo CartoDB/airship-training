@@ -3,6 +3,7 @@ function onLoad () {
   loadMap(onCategoriesChanged, onAveragePriceChanged);
   handleCategoriesSelected();
   handleTypeSelector();
+  changeToolbarColor();
 }
 
 let neighbourhoodFilter = '';
@@ -118,6 +119,11 @@ function combineFilters () {
     combinedFilter = roomTypeFilter
   }
   applyFilter(combinedFilter);
+}
+
+function changeToolbarColor() {
+  const toolbar = document.querySelector('.as-toolbar');
+  toolbar.style.setProperty('--toolbar-bg-color', '#FABADA');
 }
 
 window.onload = onLoad;
