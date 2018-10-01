@@ -95,3 +95,9 @@ Create filter expression.
 Modify viz using the filter expression.
 
 Commit []
+
+10. Add floating panel
+
+Add the simplest content to the markup
+
+commit []
