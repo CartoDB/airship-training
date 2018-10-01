@@ -32,7 +32,7 @@ Copy-pasted from `reference/Layout/overview`
 
 Commit [xxx]
 
-4. Integrating CARTO-VL
+4. Integrating MapboxGL
 
 Copy-pasted from `guides/Integrating CARTO-VL/Including CARTO-VL`
 
@@ -43,3 +43,17 @@ Create a file `map.js` to tackle map creation and instantiation.
 The code on the integration guide for initializing MapboxGL is wrapped into a function.
 
 Added call to the above function in `onload` event.
+
+Commit []
+
+5. Integrating CARTO-VL
+
+We've split map loading from CARTO-VL instantiation in two functions.
+
+`viz` is located outside the function for a future use.
+
+Add credentials.
+
+Add layer
+
+Commmit []
