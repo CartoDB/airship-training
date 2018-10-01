@@ -1,1 +1,5 @@
-console.log('main.js');
+function onLoad () {
+  initMapboxGL();
+}
+
+window.onload = onLoad;

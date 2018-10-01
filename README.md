@@ -31,3 +31,15 @@ Talk about the different zones of the layout.
 Copy-pasted from `reference/Layout/overview`
 
 Commit [xxx]
+
+4. Integrating CARTO-VL
+
+Copy-pasted from `guides/Integrating CARTO-VL/Including CARTO-VL`
+
+Last version is not updated.
+
+Create a file `map.js` to tackle map creation and instantiation.
+
+The code on the integration guide for initializing MapboxGL is wrapped into a function.
+
+Added call to the above function in `onload` event.
