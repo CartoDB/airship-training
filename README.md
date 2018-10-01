@@ -57,3 +57,16 @@ Add credentials.
 Add layer
 
 Commmit []
+
+6. Add logo to toolbar
+
+Create a new folder with an img.
+
+Add the img wrapped in a `as-toolbar__item`. Show what happens if it's not wrapped.
+
+Talk about other options to group items in a toolbar.
+
+Commit []
+
+
+
