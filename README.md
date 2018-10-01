@@ -132,4 +132,6 @@ Show how to do it via CSS variable and simple CSS overwrite.
 
 Commit []
 
+16. Add responsive layout component
 
+Commit []

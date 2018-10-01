@@ -126,4 +126,5 @@ function changeToolbarColor() {
   toolbar.style.setProperty('--toolbar-bg-color', '#FABADA');
 }
 
-window.onload = onLoad;
+const responsiveContent = document.querySelector('as-responsive-content');
+responsiveContent.addEventListener('ready', onLoad);
