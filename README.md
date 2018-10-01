@@ -74,3 +74,24 @@ Copy-paste from reference, first the tag, then the feeding.
 
 Commit []
 
+8. Feeding wdiget
+
+First, wrap widget in a container.
+
+Then, get data from viz.
+
+Add callback.
+
+Feed widget.
+
+Commit []
+
+9. Filter from widget
+
+Add event handling.
+
+Create filter expression.
+
+Modify viz using the filter expression.
+
+Commit []

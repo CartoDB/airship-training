@@ -1,4 +1,4 @@
-let viz; // Having viz outside the loadMap function will be convenient in a future step.
+let viz;
 let account = {
   username: 'cartovl',
   apiKey: 'default_public',
