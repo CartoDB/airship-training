@@ -22,4 +22,12 @@ With the exception of JS, better at the bottom.
 
 Let's copy a flag (styles + icon) and a switch to check that everything is being loaded.
 
+Commit [b76dfdff40b9ae9eeadfc682de9223a8262a3a05]
+
+3. Adding layout (toolbar)
+
+Talk about the different zones of the layout.
+
+Copy-pasted from `reference/Layout/overview`
+
 Commit [xxx]
