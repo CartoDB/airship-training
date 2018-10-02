@@ -66,7 +66,9 @@ It is divided in:
 
 ## TUTORIAL
 
-1. Boilerplate
+**0. Show documentation**
+
+**1. Boilerplate**
 
 We're going to add three files:
 
@@ -76,22 +78,28 @@ We're going to add three files:
 
 Commit https://github.com/CartoDB/airship-training/commit/e573165589faec80f77c5f0fa6264b327f829e64
 
-2. Add Airship
 
-Let's copy from `Usage from a CDN` from the guides.
-http://airship-integration.developers.carto-staging.com/developers/airship/guides/getting-started/#usage-from-a-cdn
+**2. Add Airship**
 
-With the exception of JS, better at the bottom.
+Let's copy the code snippet from [Usage from a CDN](http://airship-integration.developers.carto-staging.com/developers/airship/guides/getting-started/#usage-from-a-cdn) from the guides.
 
-Let's copy a flag (styles + icon) and a switch to check that everything is being loaded.
+Let's make one little change. Let's move the components library, the `js` one, to the bottom of the HTML file.
 
-Commit [b76dfdff40b9ae9eeadfc682de9223a8262a3a05]
+Let's go to the [flag reference](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/styles/flag) and copy the default example in our code.
 
-3. Adding layout (toolbar)
+This way we can check that styles and icons are being loaded properly.
 
-Talk about the different zones of the layout.
+Let's add a component. Go to the [switch component](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/components/switch) and copy paste into the HTML file. The switch should appear when refreshing the page.
 
-Copy-pasted from `reference/Layout/overview`
+Commit https://github.com/CartoDB/airship-training/commit/b76dfdff40b9ae9eeadfc682de9223a8262a3a05
+
+**3. Adding layout (toolbar)**
+
+Take a look on the different components we have for the layout. There's [one section on the guides](http://airship-integration.developers.carto-staging.com/developers/airship/guides/layout/) and [another one on the reference](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/layout).
+
+Copy the [basic layout](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/layout?a=basic-layout) snippet on the reference section. This will be enough for our training. The snippet creates a toolbar, the map area and a sidebar.
+
+Spoiler alert: later on the tutorial we'll add a floating panel.
 
 Commit [xxx]
 
