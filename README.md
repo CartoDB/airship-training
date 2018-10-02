@@ -66,7 +66,6 @@ It is divided in:
 
 ## TUTORIAL
 
-
 1. Boilerplate
 
 We're going to add three files:
@@ -75,7 +74,7 @@ We're going to add three files:
 - `main.css`: the stylesheet where we'll add our custom CSS.
 - `main.js`: the JS entry point to start adding our code.
 
-Commit [e573165](https://github.com/CartoDB/airship-training/commit/e573165589faec80f77c5f0fa6264b327f829e64)
+Commit e573165589faec80f77c5f0fa6264b327f829e64
 
 2. Add Airship
 
