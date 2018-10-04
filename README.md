@@ -21,17 +21,27 @@ That’s where Airship comes to the rescue. Airship is a CSS Framework and a LI 
 
 ## What can Airship do for you?
 
-- Speed up prototypes development
-  Use a common layout system used in Location Intelligence app where the map is the star.
-  Forget about how to provide a responsive application. Airship do that for you.
-  Use our examples to scaffold your application.
+**Speed up prototypes development**
 
-- Offer a good looking UI
-  - Leverage CARTO design. We are super fortunate at CARTO to count with a fantastic Design team. They've developed the design system that Airship is designed from.
-  - Customize styles in an easy way. Corporate colors can be changed on-the-fly (no need to recompile). But if you need it, you can customize every piece or Airship.
+- Use a common layout system used in Location Intelligence app where the map is the star.
+  
+- Forget about how to provide a responsive application. Airship do that for you.
+  
+- Use our examples to scaffold your application.
 
-- Connect easily with CARTO-VL and CARTO.js
-  - Airship widgets can be connected to our rendering libraries very easily, having interactivity in no maps.
+**Offer a good looking UI**
+
+- Leverage CARTO design.
+
+  We are super fortunate at CARTO to count with a fantastic Design team. They've developed the design system that Airship is designed from.
+
+- Customize styles in an easy way.
+
+  Corporate colors can be changed on-the-fly (no need to recompile). But if you need it, you can customize every piece or Airship.
+
+- Connect easily with CARTO-VL and CARTO.
+
+  Airship widgets can be connected to our rendering libraries very easily, having interactivity in no maps.
 
 Start developing. Forget about design decissions.
 
@@ -43,7 +53,7 @@ When this was ready, the Design team started a “reference implementation” of
 
 However, we saw some problems and received some feedback about it:
 - It only provided components. There was no concept of layout, that it's the first problem developers face when starting a new application.
-- Components are made in React:
+- Components were made in React:
   - Only a fraction of our partners use it.
   - Components customizing made through component extension. Felt a bit cumbersome.
 - We didn't provide examples / templates / boilerplates.
@@ -66,7 +76,7 @@ Airship comes with three packages:
 
 The documentation is for now at http://airship-integration.developers.carto-staging.com/developers/airship/
 
-It is divided in:
+The documentation is divided in:
 - Guides: the best place to start with Airship. Follow these guides to get a glance of what Airship is and how to use it in your apps.
 - Reference: come here when you need the exact examples and code snippets for a particular element.
 - Examples: code examples for particular use cases.
@@ -74,6 +84,8 @@ It is divided in:
 ## TUTORIAL
 
 **0. Show documentation**
+
+http://airship-integration.developers.carto-staging.com/developers/airship/
 
 **1. Boilerplate**
 
