@@ -5,64 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Include CSS  -->
-  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-style/v1.0.0-alpha.44/airship.css">
+  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-style/v1.0.0-beta.2/airship.css">
 
   <!-- Include Icons -->
-  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-icons/v1.0.0-alpha.44/icons.css">
+  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-icons/v1.0.0-beta.2/icons.css">
 
   <!-- Our CSS -->
   <link rel="stylesheet" href="src/main.css">
 </head>
-<body class="as-app">
-  <header class="as-toolbar">
-    <div class="as-toolbar__item">
-      <img src="img/carto.svg" />
-    </div>
-  </header>
-  <as-responsive-content>
-    <main class="as-main">
-      <div class="as-map-area">
-        <div id="map"></div>
-        <div class="as-map-panels" data-name="Room type" data-tab-order="1">
-          <div class="as-panel as-panel--top as-panel--left as-ml--24">
-            <div class="as-panel__element">
-              <h2 class="as-title">Room type visualization</h2>
-              <div class="layer-selector">
-                <as-switch id="entire-switch" checked></as-switch>
-                <label class="as-body">&nbsp;Entire home/apt</label>
-              </div>
-              <div class="layer-selector">
-                <as-switch id="private-switch" checked></as-switch>
-                <label class="as-body">&nbsp;Private room</label>
-              </div>
-              <div class="layer-selector">
-                <as-switch id="shared-switch" checked></as-switch>
-                <label class="as-body">&nbsp;Shared room</label>
+<body class="as-app-body">
+  <div class="as-app">
+    <header class="as-toolbar">
+      <div class="as-toolbar__item">
+        <img src="img/carto.svg" />
+      </div>
+    </header>
+    <as-responsive-content>
+      <main class="as-main">
+        <div class="as-map-area">
+          <div id="map"></div>
+          <div class="as-map-panels" data-name="Room type" data-tab-order="1">
+            <div class="as-panel as-panel--top as-panel--left as-ml--24">
+              <div class="as-panel__element">
+                <h2 class="as-title">Room type visualization</h2>
+                <div class="layer-selector">
+                  <as-switch id="entire-switch" checked></as-switch>
+                  <label class="as-body">&nbsp;Entire home/apt</label>
+                </div>
+                <div class="layer-selector">
+                  <as-switch id="private-switch" checked></as-switch>
+                  <label class="as-body">&nbsp;Private room</label>
+                </div>
+                <div class="layer-selector">
+                  <as-switch id="shared-switch" checked></as-switch>
+                  <label class="as-body">&nbsp;Shared room</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-    <aside class="as-sidebar as-sidebar--right" data-name="Widgets" data-tab-order="2">
-      <div class="as-container as-container--border">
-        <div class="as-box">
-          <h2 class="as-title">Neighbourhoods</h2>
-          <p class="as-body">Click on the neighbourhood name to filter its listings in the map.</p>
-          <as-category-widget
-            id="neighbourhoods"
-            show-header="false"
-            show-clear-button="true"
-            visible-categories="12">
-          </as-category-widget>
+      </main>
+      <aside class="as-sidebar as-sidebar--right" data-name="Widgets" data-tab-order="2">
+        <div class="as-container as-container--border">
+          <div class="as-box">
+            <h2 class="as-title">Neighbourhoods</h2>
+            <p class="as-body">Click on the neighbourhood name to filter its listings in the map.</p>
+            <as-category-widget
+              id="neighbourhoods"
+              show-header="false"
+              show-clear-button="true"
+              visible-categories="12">
+            </as-category-widget>
+          </div>
+          <div class="as-box formula">
+            <h2 class="as-title">Formula</h2>
+            <p id="formula-number" class="as-body"></p>
+          </div>
         </div>
-        <div class="as-box formula">
-          <h2 class="as-title">Formula</h2>
-          <p id="formula-number" class="as-body"></p>
-        </div>
-      </div>
-    </aside>
-  </as-responsive-content>
+      </aside>
+    </as-responsive-content>
+  </div>
   <!-- Include CARTO VL JS -->
   <script src="https://libs.cartocdn.com/carto-vl/v0.8.0/carto-vl.min.js"></script>
   <!-- Include Mapbox GL JS -->
@@ -71,7 +73,7 @@
   <link href="https://libs.cartocdn.com/mapbox-gl/v0.48.0-carto1/mapbox-gl.css" rel="stylesheet" />
 
   <!-- Include Web Components -->
-  <script src="https://libs.cartocdn.com/airship-components/v1.0.0-alpha.44/airship.js"></script>
+  <script src="https://libs.cartocdn.com/airship-components/v1.0.0-beta.2/airship.js"></script>
 
   <!-- Our code -->
   <script src="src/map.js"></script>

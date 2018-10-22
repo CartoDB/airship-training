@@ -42,7 +42,6 @@ function loadMap (categoriesCb, formulaCb) {
   layer = new carto.Layer(dataset, source, viz);
   layer.addTo(map);
   layer.on('updated', () => {
-    console.log(layer.viz.variables.averagePrice.value);
     const categories = layer.viz.variables.categories.value;
     const averagePrice = layer.viz.variables.averagePrice.value;
     categoriesCb && categoriesCb(categories);

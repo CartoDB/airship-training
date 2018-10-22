@@ -2,7 +2,7 @@
 
 ## Important links
 
-- [WIP documentation (VPN needed)](http://airship-integration.developers.carto-staging.com/developers)
+- [Documentation](https://carto.com/developers/airship/)
 - [Airship repo](https://github.com/CartoDB/airship)
 
 ## Intro
