@@ -1,0 +1,17 @@
+/*!
+* Airship Styles · CARTO · https://carto.com
+* 2018-10-29T10:45:13.007Z
+*/
+.as-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 20px;
+  background-color: var(--as-color-badge-blue, #B5E0F9);
+  font: 12px/20px var(--font-family-base, Roboto, sans-serif); }
+  .as-badge p {
+    margin: 0; }
+  .as-badge i:first-child {
+    margin-right: 8px; }
+  .as-badge i:last-child {
+    margin-left: 8px; }
