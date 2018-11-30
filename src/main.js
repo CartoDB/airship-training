@@ -1,23 +1,39 @@
 function onLoad () {
   initMapboxGL();
-  loadMap(onCategoriesChanged, onAveragePriceChanged);
+  loadMap(onCategoriesChanged, onAveragePriceChanged, onPriceChanged, onLegendCalculated);
   handleCategoriesSelected();
   handleTypeSelector();
-  changeToolbarColor();
+  handleHistogramFilter();
 }
+
+function rgbToHex (rgb) { 
+  var hex = Number(rgb).toString(16);
+  if (hex.length < 2) {
+       hex = "0" + hex;
+  }
+  return hex;
+};
 
 let neighbourhoodFilter = '';
 let roomTypeFilter = '';
+let priceGtFilter = '';
+let priceLtFilter = '';
+let ramp = '';
 
 function onCategoriesChanged (categories) {
   const categoriesWidget = document.getElementById('neighbourhoods');
   const data = categories.map((category) => {
     const { x, y } = category;
-    return {
+    let obj = {
       name: x,
       value: y
     };
+    if (ramp[obj.name]) {
+      obj.color = ramp[obj.name];
+    }
+    return obj;
   });
+  console.log('feed');
   categoriesWidget.categories = data;
 }
 
@@ -27,13 +43,50 @@ function onAveragePriceChanged (averagePrice) {
   formulaTextElement.textContent = formattedText;
 }
 
+function onPriceChanged (price) {
+  var histogramWidget = document.getElementById('price');
+  const data = price.map(bin => {
+    return {
+      start: bin.x[0],
+      end: bin.x[1],
+      value: bin.y
+    };
+  });
+  histogramWidget.data = data;
+}
+
+function onLegendCalculated (legend) {
+  if (!ramp) {
+    ramp = {};
+    legend.data.forEach(entry => {
+      let hex = '#';
+      hex += rgbToHex(entry.value.r);
+      hex += rgbToHex(entry.value.g);
+      hex += rgbToHex(entry.value.b);
+
+      ramp[entry.key] = hex;
+    });
+  }
+}
+
 // Event handling
 function handleCategoriesSelected () {
   const categoriesWidget = document.getElementById('neighbourhoods');
   categoriesWidget.addEventListener('categoriesSelected', (event) => {
-    filterNeighbourhood(event.detail);
+    setTimeout(async function () {
+      const selected = await categoriesWidget.getSelectedCategories();
+      filterNeighbourhood(selected);
+    }, 500);
   });
 }
+
+function handleHistogramFilter () {
+  var histogramWidget = document.getElementById('price');
+  histogramWidget.addEventListener('selectionChanged', (event) => {
+    filterPrice(event.detail);
+  });
+}
+
 
 // Getting the filter
 function filterNeighbourhood (neighbourhoods) {
@@ -48,20 +101,28 @@ function filterNeighbourhood (neighbourhoods) {
   combineFilters(neighbourhoodFilter);
 }
 
+function filterPrice (priceRange) {
+  if (priceRange) {
+    priceGtFilter = `$price >= ${priceRange[0]}`;
+    priceLtFilter = `$price <= ${priceRange[1]}`;
+  } else {
+    priceGtFilter = '';
+    priceLtFilter = '';
+  }
+  combineFilters();
+}
+
 // Applying filter to viz
 function applyFilter(filter) {
-  const color = 'rgb(0,0,255)';
-  const opacity = '0.25';
-  let colorExp = `opacity(${color}, ${opacity})`;
-
   if (!viz) {
     return;
   }
 
   if (filter) {
-    colorExp = `opacity(${color}, ${filter} * ${opacity})`;
+    viz.filter.blendTo(filter);
+  } else {
+    viz.filter.blendTo(1);
   }
-  viz.color.blendTo(colorExp);
 }
 
 // Event handling
@@ -111,19 +172,22 @@ function filterByType () {
 
 function combineFilters () {
   let combinedFilter = '';
-  if (neighbourhoodFilter && roomTypeFilter) {
-    combinedFilter = `${neighbourhoodFilter} and ${roomTypeFilter}`;
-  } else if (neighbourhoodFilter) {
-    combinedFilter = neighbourhoodFilter;
-  } else if (roomTypeFilter) {
-    combinedFilter = roomTypeFilter
+  const filters = [];
+  if (neighbourhoodFilter) {
+    filters.push(neighbourhoodFilter);
   }
+  if (roomTypeFilter) {
+    filters.push(roomTypeFilter);
+  }
+  if (priceGtFilter) {
+    filters.push(priceGtFilter);
+  }
+  if (priceLtFilter) {
+    filters.push(priceLtFilter);
+  }
+  combinedFilter = filters.join(' and ');
+  console.log(combinedFilter);
   applyFilter(combinedFilter);
-}
-
-function changeToolbarColor() {
-  const toolbar = document.querySelector('.as-toolbar');
-  toolbar.style.setProperty('--toolbar-bg-color', '#FABADA');
 }
 
 const responsiveContent = document.querySelector('as-responsive-content');
