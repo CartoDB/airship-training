@@ -119,9 +119,9 @@ function applyFilter(filter) {
   }
 
   if (filter) {
-    viz.filter.blendTo(filter);
+    viz.filter.blendTo(filter, 0);
   } else {
-    viz.filter.blendTo(1);
+    viz.filter.blendTo(1, 0);
   }
 }
 
