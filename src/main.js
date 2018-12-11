@@ -1,7 +1,10 @@
 function onLoad () {
   initMapboxGL();
   loadMap(onCategoriesChanged);
+  handleCategoriesSelected();
 }
+
+let neighbourhoodFilter = '';
 
 function onCategoriesChanged (categories) {
   const categoriesWidget = document.getElementById('neighbourhoods');
@@ -14,6 +17,39 @@ function onCategoriesChanged (categories) {
     };
   });
   categoriesWidget.categories = data;
+}
+
+function handleCategoriesSelected () {
+  const categoriesWidget = document.getElementById('neighbourhoods');
+  categoriesWidget.addEventListener('categoriesSelected', async (event) => {
+    const selected = await categoriesWidget.getSelectedCategories();
+    filterNeighbourhood(selected);
+  });
+}
+
+function filterNeighbourhood (neighbourhoods) {
+  if (neighbourhoods.length > 0) {
+    const formattedData = neighbourhoods.map((neighbourhood) => {
+      // We need to pass the categories into apostrophes
+      return `'${neighbourhood}'`;
+    });
+    neighbourhoodFilter = `$neighbourhood_group in [${formattedData.join(',')}]`;
+  } else {
+    neighbourhoodFilter = '';
+  }
+  applyFilter(neighbourhoodFilter);
+}
+
+function applyFilter(filter) {
+  if (!viz) {
+    return;
+  }
+
+  if (filter) {
+    viz.filter.blendTo(filter, 0);
+  } else {
+    viz.filter.blendTo(1, 0);
+  }
 }
 
 window.onload = onLoad;
