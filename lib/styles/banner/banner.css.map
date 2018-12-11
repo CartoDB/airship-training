@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,yFAAiF;ACEzF,UAAW;EACT,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,UAAU;EACvB,OAAO,EAAE,IAAc;EACvB,aAAa,EAAE,CAAC;EAChB,gBAAgB,EAAE,8BAAsC;EACxD,IAAI,EDEM,qDAAuD;ECAjE,mBAAW;IACT,IAAI,EAAE,CAAC;IACP,YAAY,EAAE,GAAc;EAG9B,gBAAQ;IACN,OAAO,EAAE,IAAI;IACb,WAAW,EAAE,GAAc;EAG7B,iCAA+C;IAnBjD,UAAW;MAoBP,WAAW,EAAE,MAAM;MAEnB,gBAAQ;QACN,OAAO,EAAE,CAAC",
-"sources": ["../../src/core/variables/_typography.scss","../../src/banner/banner.scss"],
-"names": [],
-"file": "banner.css"
-}

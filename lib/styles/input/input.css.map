@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,SAAU;EACR,UAAU,EAAE,GAAG;ECQf,OAAO,EAHK,IAAqC",
-"sources": ["../../src/input/input.scss","../../src/core/tools/_mixins.scss"],
-"names": [],
-"file": "input.css"
-}

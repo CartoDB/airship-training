@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,yFAAiF;ACEzF,SAAU;EACR,OAAO,EAAE,WAAW;EACpB,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,KAAgB;EACzB,aAAa,EAAE,IAAc;EAC7B,gBAAgB,EAAE,mCAAgD;EAClE,IAAI,EDGM,qDAAuD;ECDjE,WAAE;IACA,MAAM,EAAE,CAAC;EAGX,uBAAc;IACZ,YAAY,EAAE,GAAc;EAG9B,sBAAa;IACX,WAAW,EAAE,GAAc",
-"sources": ["../../src/core/variables/_typography.scss","../../src/badges/badges.scss"],
-"names": [],
-"file": "badges.css"
-}

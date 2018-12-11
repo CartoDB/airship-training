@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,MAAO;EACL,KAAK,EAAE,UAAU;EACjB,SAAS,EAAE,IAAI",
-"sources": ["../../src/title/title.scss"],
-"names": [],
-"file": "title.css"
-}

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,yFAAiF;ACIzF,SAAU;EACR,qBAAqB,CAAC,sBAAqB;EAE3C,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,GAAG;EACZ,GAAG,EAAE,CAAC;EACN,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,iDAAgD;EAE5D,kBAAW;IACT,SAAS,EAAE,KAAK;IAChB,UAAU,EAAE,IAAI;IAChB,OAAO,EAAE,IAAe;IACxB,aAAa,EAAE,GAAc;IAC7B,UAAU,EAAE,2BAAsC;IAClD,UAAU,ECtBH,kCAAsC",
-"sources": ["../../src/core/variables/_typography.scss","../../src/modal/modal.scss","../../src/core/variables/_shadows.scss"],
-"names": [],
-"file": "modal.css"
-}
