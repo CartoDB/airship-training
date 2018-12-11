@@ -1,20 +1,19 @@
 function onLoad () {
   initMapboxGL();
-  loadMap();
-  feedWidget();
+  loadMap(onCategoriesChanged);
 }
 
-function feedWidget () {
-  const categoryWidget = document.getElementById('neighbourhoods');
-  categoryWidget.categories = [
-    { name: 'Bars & Restaurants', value: 1000, color: '#FABADA' },
-    { name: 'Fashion', value: 900 },
-    { name: 'Grocery', value: 800 },
-    { name: 'Health', value: 400 },
-    { name: 'Shopping mall', value: 250 },
-    { name: 'Transportation', value: 1000 },
-    { name: 'Leisure', value: 760 }
-  ];
+function onCategoriesChanged (categories) {
+  const categoriesWidget = document.getElementById('neighbourhoods');
+  const data = categories.map((category) => {
+    // We need to map { x, y } (the format returned by VL) to { name, value } (the format needed by Airship)
+    const { x, y } = category;
+    return {
+      name: x,
+      value: y
+    };
+  });
+  categoriesWidget.categories = data;
 }
 
 window.onload = onLoad;
