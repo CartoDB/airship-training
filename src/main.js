@@ -72,7 +72,7 @@ function filterByType () {
     // With all switches off, we filter by a non-existent value, so no points are returned.
     roomTypeFilter = `$room_type in ['wadus']`;
   }
-  applyFilter(roomTypeFilter);
+  combineFilters(roomTypeFilter);
 }
 
 function filterNeighbourhood (neighbourhoods) {
@@ -85,7 +85,7 @@ function filterNeighbourhood (neighbourhoods) {
   } else {
     neighbourhoodFilter = '';
   }
-  applyFilter(neighbourhoodFilter);
+  combineFilters(neighbourhoodFilter);
 }
 
 function applyFilter(filter) {
@@ -98,6 +98,19 @@ function applyFilter(filter) {
   } else {
     viz.filter.blendTo(1, 0);
   }
+}
+
+function combineFilters () {
+  let combinedFilter = '';
+  const filters = [];
+  if (neighbourhoodFilter) {
+    filters.push(neighbourhoodFilter);
+  }
+  if (roomTypeFilter) {
+    filters.push(roomTypeFilter);
+  }
+  combinedFilter = filters.join(' and ');
+  applyFilter(combinedFilter);
 }
 
 window.onload = onLoad;
