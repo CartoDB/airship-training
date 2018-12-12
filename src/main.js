@@ -125,4 +125,5 @@ function changeToolbarColor() {
   toolbar.style.setProperty('--as-toolbar--background-color', '#0284A8');
 }
 
-window.onload = onLoad;
+const responsiveContent = document.querySelector('as-responsive-content');
+responsiveContent.addEventListener('ready', onLoad);
