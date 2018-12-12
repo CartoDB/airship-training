@@ -2,9 +2,11 @@ function onLoad () {
   initMapboxGL();
   loadMap(onCategoriesChanged);
   handleCategoriesSelected();
+  handleTypeSelector();
 }
 
 let neighbourhoodFilter = '';
+let roomTypeFilter = '';
 
 function onCategoriesChanged (categories) {
   const categoriesWidget = document.getElementById('neighbourhoods');
@@ -25,6 +27,52 @@ function handleCategoriesSelected () {
     const selected = await categoriesWidget.getSelectedCategories();
     filterNeighbourhood(selected);
   });
+}
+
+function handleTypeSelector () {
+  const entireSwitch = document.getElementById('entire-switch');
+  const privateSwitch = document.getElementById('private-switch');
+  const sharedSwitch = document.getElementById('shared-switch');
+
+  entireSwitch.addEventListener('change', (event) => {
+    filterByType();
+  });
+  privateSwitch.addEventListener('change', (event) => {
+    filterByType();
+  });
+  sharedSwitch.addEventListener('change', (event) => {
+    filterByType();
+  });
+}
+
+function filterByType () {
+  const entireSwitch = document.getElementById('entire-switch');
+  const privateSwitch = document.getElementById('private-switch');
+  const sharedSwitch = document.getElementById('shared-switch');
+  const entireValue = "'Entire home/apt'";
+  const privateValue = "'Private room'";
+  const sharedValue = "'Shared room'";
+  const filterValues = [];
+
+  if (entireSwitch.checked) {
+    filterValues.push(entireValue);
+  }
+  if (privateSwitch.checked) {
+    filterValues.push(privateValue);
+  }
+  if (sharedSwitch.checked) {
+    filterValues.push(sharedValue);
+  }
+
+  if (filterValues.length === 3) {
+    roomTypeFilter = '';
+  } else if (filterValues.length > 0) {
+    roomTypeFilter = `$room_type in [${filterValues.join(',')}]`;
+  } else {
+    // With all switches off, we filter by a non-existent value, so no points are returned.
+    roomTypeFilter = `$room_type in ['wadus']`;
+  }
+  applyFilter(roomTypeFilter);
 }
 
 function filterNeighbourhood (neighbourhoods) {
