@@ -1,4 +1,5 @@
 function onLoad () {
+  changeToolbarColor();
   initMapboxGL();
   loadMap(onCategoriesChanged, onAveragePriceChanged);
   handleCategoriesSelected();
@@ -117,6 +118,11 @@ function combineFilters () {
   }
   combinedFilter = filters.join(' and ');
   applyFilter(combinedFilter);
+}
+
+function changeToolbarColor() {
+  const toolbar = document.querySelector('.as-toolbar');
+  toolbar.style.setProperty('--as-toolbar--background-color', '#0284A8');
 }
 
 window.onload = onLoad;
