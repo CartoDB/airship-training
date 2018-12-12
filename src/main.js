@@ -1,23 +1,36 @@
 function onLoad () {
   changeToolbarColor();
   initMapboxGL();
-  loadMap(onCategoriesChanged, onAveragePriceChanged, onPriceChanged);
+  loadMap(onCategoriesChanged, onAveragePriceChanged, onPriceChanged, onLegendCalculated);
   handleCategoriesSelected();
   handleTypeSelector();
 }
 
+function rgbToHex (rgb) { 
+  var hex = Number(rgb).toString(16);
+  if (hex.length < 2) {
+       hex = "0" + hex;
+  }
+  return hex;
+};
+
 let neighbourhoodFilter = '';
 let roomTypeFilter = '';
+let ramp = '';
 
 function onCategoriesChanged (categories) {
   const categoriesWidget = document.getElementById('neighbourhoods');
   const data = categories.map((category) => {
     // We need to map { x, y } (the format returned by VL) to { name, value } (the format needed by Airship)
     const { x, y } = category;
-    return {
+    let obj = {
       name: x,
       value: y
     };
+    if (ramp[obj.name]) {
+      obj.color = ramp[obj.name];
+    }
+    return obj;
   });
   categoriesWidget.categories = data;
 }
@@ -39,6 +52,20 @@ function onPriceChanged (price) {
     };
   });
   histogramWidget.data = data;
+}
+
+function onLegendCalculated (legend) {
+  if (!ramp) {
+    ramp = {};
+    legend.data.forEach(entry => {
+      let hex = '#';
+      hex += rgbToHex(entry.value.r);
+      hex += rgbToHex(entry.value.g);
+      hex += rgbToHex(entry.value.b);
+
+      ramp[entry.key] = hex;
+    });
+  }
 }
 
 function handleCategoriesSelected () {

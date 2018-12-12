@@ -21,7 +21,7 @@ function initMapboxGL () {
   map.addControl(nav, 'bottom-left');
 }
 
-function loadMap (categoriesCb, formulaCb, priceCb) {
+function loadMap (categoriesCb, formulaCb, priceCb, legendCb) {
   const { username, apiKey, dataset } = account;
   carto.setDefaultAuth({
     user: username,
@@ -31,7 +31,8 @@ function loadMap (categoriesCb, formulaCb, priceCb) {
   const source = new carto.source.SQL( `SELECT * from ${dataset} WHERE price < 500`);
   viz = new carto.Viz(`
     width: 8,
-    color: opacity(rgb(0, 0, 255), 0.35),
+    @ncolors: ramp($neighbourhood_group, vivid),
+    color: opacity(@ncolors, 0.35),
     strokeWidth: 0,
     @categories: viewportHistogram($neighbourhood_group),
     @roomType: $room_type,
@@ -45,8 +46,10 @@ function loadMap (categoriesCb, formulaCb, priceCb) {
     const categories = layer.viz.variables.categories.value;
     const averagePrice = layer.viz.variables.averagePrice.value;
     const price = layer.viz.variables.price.value;
+    const ramp = layer.viz.variables.ncolors.getLegendData();
     categoriesCb && categoriesCb(categories);
     formulaCb && formulaCb(averagePrice);
     priceCb && priceCb(price);
+    legendCb && legendCb(ramp);
   });
 }
