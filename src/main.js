@@ -1,6 +1,6 @@
 function onLoad () {
   initMapboxGL();
-  loadMap(onCategoriesChanged);
+  loadMap(onCategoriesChanged, onAveragePriceChanged);
   handleCategoriesSelected();
   handleTypeSelector();
 }
@@ -19,6 +19,12 @@ function onCategoriesChanged (categories) {
     };
   });
   categoriesWidget.categories = data;
+}
+
+function onAveragePriceChanged (averagePrice) {
+  const formulaTextElement = document.getElementById('formula-number');
+  const formattedText = `${averagePrice.toFixed(2)}$`;
+  formulaTextElement.textContent = formattedText;
 }
 
 function handleCategoriesSelected () {

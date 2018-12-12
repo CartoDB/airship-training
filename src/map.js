@@ -21,7 +21,7 @@ function initMapboxGL () {
   map.addControl(nav, 'bottom-left');
 }
 
-function loadMap (categoriesCb) {
+function loadMap (categoriesCb, formulaCb) {
   const { username, apiKey, dataset } = account;
   carto.setDefaultAuth({
     user: username,
@@ -34,13 +34,16 @@ function loadMap (categoriesCb) {
     color: opacity(rgb(0, 0, 255), 0.35),
     strokeWidth: 0,
     @categories: viewportHistogram($neighbourhood_group),
-    @roomType: $room_type
+    @roomType: $room_type,
+    @averagePrice: viewportAvg($price)
   `);
 
   layer = new carto.Layer(dataset, source, viz);
   layer.addTo(map);
   layer.on('updated', () => {
     const categories = layer.viz.variables.categories.value;
+    const averagePrice = layer.viz.variables.averagePrice.value;
     categoriesCb && categoriesCb(categories);
+    formulaCb && formulaCb(averagePrice);
   });
 }
