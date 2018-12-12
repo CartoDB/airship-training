@@ -269,11 +269,115 @@ Commit https://github.com/CartoDB/airship-training/commit/5cf54becdd3e492562d5ee
 
 **18. Add histogram widget**
 
+To add a histogram widget, first we need to add the component to the HTML file. It's as simple as add this snippet to the sidebar:
+
+```html
+<div class="as-box">
+  <h2 class="as-title">Price</h2>
+  <as-histogram-widget
+    id="price"
+    show-header="false"
+    show-clear="false"
+    disable-interactivity>
+  </as-histogram-widget>
+</div>
+```
+
+We are disabling interactivity on purpose because the interaction between VL and the histogram doesn't work as expected with this data. As soon as we fix it, we'll change this tutorial.
+
+Then, we need to get the histogram data from the VL viz, adding this code to the `carto.Viz` object:
+
+```
+@price: viewportHistogram($price, 10)
+```
+
+Then, we need to pass the data when a change in the layer happens:
+
+```javascript
+function loadMap (categoriesCb, formulaCb, priceCb) { // Added priceCb
+
+  ...
+
+  layer.on('updated', () => {
+    const price = layer.viz.variables.price.value;
+    priceCb && priceCb(price);
+  });
+}
+```
+
+Last, in the `main.js` file we need to provide code to feed the histogram widget when the layer updates.
+
+```javascript
+function onPriceChanged (price) {
+  var histogramWidget = document.getElementById('price');
+  const data = price.map(bin => {
+    // We need to map the format returned by VL to the format needed by Airship
+    return {
+      start: bin.x[0],
+      end: bin.x[1],
+      value: bin.y
+    };
+  });
+  histogramWidget.data = data;
+}
+```
+
+For a detailed view of the changes made in this step, see the commit diff:
+
 Commit https://github.com/CartoDB/airship-training/commit/29c29ab2d518f856bf26a7bd806fd7593e3a0e81
 
 `git checkout 29c29ab2d518f856bf26a7bd806fd7593e3a0e81`
 
 **19. Add color ramp to categories**
+
+Let's add a color ramp to the neighbourhoods and apply those colos to the category widget.
+
+First, in the `carto.Viz` object, we add a ramp variable and change the color expression:
+
+```
+@ncolors: ramp($neighbourhood_group, vivid),
+color: opacity(@ncolors, 0.35)
+```
+
+That colors immediately the visualization according to the neighbourhood of every point.
+
+Second, when the layer updates we can access to the variable legend data and communicate the value to the function that handles it, so we can modify the widget colors:
+
+```javascript
+function loadMap (categoriesCb, formulaCb, priceCb, legendCb) { // Added legendCb callback
+
+  ...
+
+  const ramp = layer.viz.variables.ncolors.getLegendData();
+  legendCb && legendCb(ramp);
+```
+
+In `main.js` file, we add the function to handle the ramp values returned by CARTO VL. VL return RGB values but we need HEX values for the category widget, so we must transform it.
+
+```javascript
+function onLegendCalculated (legend) {
+  if (!ramp) {
+    ramp = {};
+    legend.data.forEach(entry => {
+      let hex = '#';
+      hex += rgbToHex(entry.value.r);
+      hex += rgbToHex(entry.value.g);
+      hex += rgbToHex(entry.value.b);
+       ramp[entry.key] = hex;
+    });
+  }
+}
+```
+
+Last, we need to modify the category data to set a particular color for each category:
+
+```javascript
+if (ramp[obj.name]) {
+  obj.color = ramp[obj.name];
+}
+```
+
+For a detailed view of the changes made in this step, see the commit diff:
 
 Commit https://github.com/CartoDB/airship-training/commit/904c4c25cb1923920d6cf941caebbf4ca278ab12
 
