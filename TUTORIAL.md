@@ -114,7 +114,7 @@ Take a look on the options of the category widget.
 
 At this point you should see a widget in the sidebar, with no relation with the visualization.
 
-![image](https://user-images.githubusercontent.com/1078228/46361623-68197080-c66e-11e8-8aea-daf0c99d9eab.png)
+![image](https://user-images.githubusercontent.com/1078228/49879535-77652900-fe2a-11e8-8162-5633c75f82ee.png)
 
 Commit https://github.com/CartoDB/airship-training/commit/1e81ab1be82a3b236cd2c7c0aecd808edb03b843
 
@@ -130,7 +130,7 @@ Then, add in `main.js` the callback function to map the histogram data and feed 
 
 At this point you should see the neighbourhood data with the widget reacting to map panning.
 
-![image](https://user-images.githubusercontent.com/1078228/46361891-158c8400-c66f-11e8-87f5-019f08f6cb11.png)
+![image](https://user-images.githubusercontent.com/1078228/49879864-2efa3b00-fe2b-11e8-8736-8814c2985c08.png)
 
 Commit https://github.com/CartoDB/airship-training/commit/dcb7d3f49af79787c431e25e173f05bcd55e52d5
 
@@ -164,7 +164,7 @@ Let's add the simplest floating to the markup. Take a look on the Map Panels sec
 
 At this point you should see a floating panel with just a text.
 
-![image](https://user-images.githubusercontent.com/1078228/46362428-82544e00-c670-11e8-8b88-40d59d09f620.png)
+![image](https://user-images.githubusercontent.com/1078228/49879955-5fda7000-fe2b-11e8-9626-9bcdc3d6a378.png)
 
 commit https://github.com/CartoDB/airship-training/commit/ec4c2312348e4c977363f12d1ac8a66863a2bdda
 
@@ -180,7 +180,7 @@ To avoid this, we'll add some custom CSS code. This shows how Airship approach a
 
 At this point you should see three widgets in the floating panel.
 
-![image](https://user-images.githubusercontent.com/1078228/46362487-afa0fc00-c670-11e8-939a-ba84bab30733.png)
+![image](https://user-images.githubusercontent.com/1078228/49880037-91ebd200-fe2b-11e8-9abe-9f9dac47733f.png)
 
 commit https://github.com/CartoDB/airship-training/commit/09262a2c65d88e337b6491c2843850001ba7f618
 
