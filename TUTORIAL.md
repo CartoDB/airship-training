@@ -14,7 +14,11 @@ We're going to add three files:
 
 At this point you should see a pink page.
 
-Commit https://github.com/CartoDB/airship-training/commit/e573165589faec80f77c5f0fa6264b327f829e64
+SRC files
+https://github.com/CartoDB/airship-training/tree/3f21599c9de55d9d070cdc0dce49cc21b3b28158/src
+
+HTML boilerplate
+https://github.com/CartoDB/airship-training/blob/3f21599c9de55d9d070cdc0dce49cc21b3b28158/index.html
 
 `git checkout 01-boilerplate`
 
