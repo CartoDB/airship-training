@@ -20,47 +20,45 @@ https://github.com/CartoDB/airship-training/tree/3f21599c9de55d9d070cdc0dce49cc2
 HTML boilerplate
 https://github.com/CartoDB/airship-training/blob/3f21599c9de55d9d070cdc0dce49cc21b3b28158/index.html
 
-`git checkout 01-boilerplate`
+`git checkout 3f21599c9de55d9d070cdc0dce49cc21b3b28158`
 
 **2. Add Airship**
 
-Let's copy the code snippet from [Usage from a CDN](http://airship-integration.developers.carto-staging.com/developers/airship/guides/getting-started/#usage-from-a-cdn) from the guides.
+Let's copy the code snippet from [Usage from a CDN](https://carto.com/developers/airship/guides/getting-started/#usage-from-a-cdn) from the guides.
 
 Let's make one little change. Let's move the components library, the `js` one, to the bottom of the HTML file.
 
-Let's go to the [flag reference](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/styles/flag) and copy the default example in our code.
+Let's go to the [flag reference](https://carto.com/developers/airship/reference/#/styles/flag) and copy the default example in our code.
 
 This way we can check that styles and icons are being loaded properly.
 
-Let's add a component. Go to the [switch component](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/components/switch) and copy paste into the HTML file. The switch should appear when refreshing the page.
+Let's add a component. Go to the [switch component](https://carto.com/developers/airship/reference/#/components/switch) and copy paste into the HTML file. The switch should appear when refreshing the page.
 
 At this point you should see a notification flag and a switch.
 
 ![image](https://user-images.githubusercontent.com/1078228/46360664-343d4b80-c66c-11e8-9b31-a6060bc52042.png)
 
-Commit https://github.com/CartoDB/airship-training/commit/b76dfdff40b9ae9eeadfc682de9223a8262a3a05
+Commit https://github.com/CartoDB/airship-training/commit/fc40833823e0c7ad1a06f3c1603e21d584ae3fbe
 
-`git checkout 02-include-airship`
+`git checkout fc40833823e0c7ad1a06f3c1603e21d584ae3fbe`
 
 **3. Adding layout (toolbar)**
 
-Take a look on the different components we have for the layout. There's [one section on the guides](http://airship-integration.developers.carto-staging.com/developers/airship/guides/layout/) and [another one on the reference](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/layout).
+Take a look on the different components we have for the layout. There's [one section on the guides](https://carto.com/developers/airship/guides/layout/) and [another one on the reference](https://carto.com/developers/airship/reference/#/layout).
 
-Copy the [basic layout](http://airship-integration.developers.carto-staging.com/developers/airship/reference/#/layout?a=basic-layout) snippet on the reference section. This will be enough for our training. The snippet creates a toolbar, the map area and a sidebar.
+Copy the [basic layout](https://carto.com/developers/airship/reference/#/layout?a=basic-layout) snippet on the reference section. This will be enough for our training. The snippet creates a toolbar, the map area and a sidebar.
 
 Spoiler alert: later on the tutorial we'll add a floating panel.
 
 At this point you should see a blank page with a blue toolbar on top and a white sidebar at the right.
 
-Commit https://github.com/CartoDB/airship-training/commit/3ebb6a6341f89208977e306f5f36a88b2fc5b858
+Commit https://github.com/CartoDB/airship-training/commit/5906353c14990474937eb89d8d98c0b29fccdbd7
 
-`git checkout 03-add-layout`
+`git checkout 5906353c14990474937eb89d8d98c0b29fccdbd7`
 
 **4. Integrating MapboxGL**
 
-Copy-pasted from `guides/Integrating CARTO-VL/Including CARTO-VL`
-
-Last version of CARTO-VL is not updated. Let's go for the 0.8.0.
+Copy-pasted from `Airship guides/Integrating CARTO-VL/Including CARTO-VL`
 
 Create a file `map.js` to tackle map creation and instantiation.
 
@@ -72,9 +70,9 @@ At this point you should see the content area of the page filled with a basemap.
 
 ![image](https://user-images.githubusercontent.com/1078228/46361098-1e7c5600-c66d-11e8-8082-ac65ce8d587e.png)
 
-Commit https://github.com/CartoDB/airship-training/commit/495501b77df88f2e90a56885acdf501231df6b52
+Commit https://github.com/CartoDB/airship-training/commit/39d97e7fa69466de5372485dd453b43015c0934d
 
-`git checkout 04-add-mapbox`
+`git checkout 39d97e7fa69466de5372485dd453b43015c0934d`
 
 **5. Integrating CARTO-VL**
 
@@ -88,9 +86,9 @@ At this point you should see a cloud of blue point on top of the map.
 
 ![image](https://user-images.githubusercontent.com/1078228/46361310-8cc11880-c66d-11e8-9673-e733167acff2.png)
 
-Commmit https://github.com/CartoDB/airship-training/commit/06a04ee98ff67b3cc9e72e3f429e5954a3041f83
+Commmit https://github.com/CartoDB/airship-training/commit/25fbebf32081f56322e44af2d145c05025c25724
 
-`git checkout 05-add-cartovl`
+`git checkout 25fbebf32081f56322e44af2d145c05025c25724`
 
 **6. Add logo to toolbar**
 
@@ -106,9 +104,7 @@ Take a look on the other options to group items in a toolbar. See the toolbar re
 
 At this point you should see a logo in the toolbar.
 
-Commit https://github.com/CartoDB/airship-training/commit/6388ff3dff7151f4d52faa9cfc8b8f9e6a06b8aa
-
-`git checkout 06-add-logo`
+No commit diff. Logo was already there.
 
 **7. Add a category widget**
 
@@ -120,9 +116,9 @@ At this point you should see a widget in the sidebar, with no relation with the 
 
 ![image](https://user-images.githubusercontent.com/1078228/46361623-68197080-c66e-11e8-8aea-daf0c99d9eab.png)
 
-Commit https://github.com/CartoDB/airship-training/commit/87342b802e83c09993e58c9eb49b5ab83e3938a8
+Commit https://github.com/CartoDB/airship-training/commit/1e81ab1be82a3b236cd2c7c0aecd808edb03b843
 
-`git checkout 07-add-widget`
+`git checkout 1e81ab1be82a3b236cd2c7c0aecd808edb03b843`
 
 **8. Feeding widget**
 
@@ -136,9 +132,9 @@ At this point you should see the neighbourhood data with the widget reacting to 
 
 ![image](https://user-images.githubusercontent.com/1078228/46361891-158c8400-c66f-11e8-87f5-019f08f6cb11.png)
 
-Commit https://github.com/CartoDB/airship-training/commit/ca863ec30f03ff7023f5764dc3f6f035d9ebf5c2
+Commit https://github.com/CartoDB/airship-training/commit/dcb7d3f49af79787c431e25e173f05bcd55e52d5
 
-`git checkout 08-feed-widget`
+`git checkout dcb7d3f49af79787c431e25e173f05bcd55e52d5`
 
 **9. Filter from widget**
 
@@ -158,9 +154,9 @@ This example is using the CARTO-VL string API. Using the JS API will be similar.
 
 At this point, clicking on a category should filter the visualization.
 
-Commit https://github.com/CartoDB/airship-training/commit/aa228da8dab36544fb3a2b97d1a8b2f58604a21b
+Commit https://github.com/CartoDB/airship-training/commit/e26678afd071b54d5848de83c7999fff64e8249b
 
-`git checkout 09-filter-widget`
+`git checkout e26678afd071b54d5848de83c7999fff64e8249b`
 
 **10. Add floating panel**
 
@@ -170,9 +166,9 @@ At this point you should see a floating panel with just a text.
 
 ![image](https://user-images.githubusercontent.com/1078228/46362428-82544e00-c670-11e8-8b88-40d59d09f620.png)
 
-commit https://github.com/CartoDB/airship-training/commit/af02959659e0c605ddacdfb6ae5108f2dbed1cfa
+commit https://github.com/CartoDB/airship-training/commit/ec4c2312348e4c977363f12d1ac8a66863a2bdda
 
-`git checkout 10-add-panel`
+`git checkout ec4c2312348e4c977363f12d1ac8a66863a2bdda`
 
 **11. Add switches**
 
@@ -188,7 +184,7 @@ At this point you should see three widgets in the floating panel.
 
 commit https://github.com/CartoDB/airship-training/commit/09262a2c65d88e337b6491c2843850001ba7f618
 
-`git checkout 11-add-switches`
+`git checkout 743312abbf783589bffc3f1a1235ffd22b693195`
 
 **12. Add filtering to switches**
 
@@ -202,9 +198,9 @@ Then we call to the existing `applyFilter` function.
 
 At this point, clicking on the switches should have an impact on the visualization but the two filters are not combined.
 
-Commit https://github.com/CartoDB/airship-training/commit/9439c97654677a2bae5bc9ec746763da6bd9555c
+Commit https://github.com/CartoDB/airship-training/commit/49c4ec6705f3b7769e84d8b9c6ff841f24f23400
 
-`git checkout 12-add-filtering`
+`git checkout 49c4ec6705f3b7769e84d8b9c6ff841f24f23400q`
 
 **13. Combine filters**
 
@@ -218,9 +214,9 @@ It's a simple function that combines the previous filter expressions via `and` a
 
 At this point the filtering should behave properly.
 
-Commit https://github.com/CartoDB/airship-training/commit/64010db3b9650bcbc5a5d87d8c90263f099fd42e
+Commit https://github.com/CartoDB/airship-training/commit/c2565a27d8a4a57067c51dec99c7ffd88ba8f64c
 
-`git checkout 13-combine-filters`
+`git checkout c2565a27d8a4a57067c51dec99c7ffd88ba8f64c`
 
 **14. Exercise: add a formula widget**
 
@@ -234,23 +230,29 @@ Clue: steps to do
 - Change / use another style for the text.
 - Add a new callback to update the formula text when the layer is updated.
 
-Commit https://github.com/CartoDB/airship-training/commit/2c6e1ef4d2bd5458e77f2182a4857dedd3dcd808
+Commit https://github.com/CartoDB/airship-training/commit/a90289dc303c5bb575a5f76d57e78c6e5357ea9b
 
-`git checkout 14-add-formula`
+`git checkout a90289dc303c5bb575a5f76d57e78c6e5357ea9b`
 
-**15. Exercise: change toolbar color**
+**15. Exercise: change toolbar color via CSS overwrite**
 
 Change the toolbar color to whatever color you want.
 
-Show how to do it via CSS variable and simple CSS overwrite.
+You can do it with a simple CSS overwrite.
 
-Commit https://github.com/CartoDB/airship-training/commit/df9831aec1c67f1822ab1ea85eb15896c4f635f4
+Commit https://github.com/CartoDB/airship-training/commit/e996b02938f5968f89b76310732c66b45a7141aa
 
-`git checkout 15-change-color`
+`git checkout e996b02938f5968f89b76310732c66b45a7141aa`
 
-**16. Add responsive layout component**
+**16. Change toolbar color via CSS variable**
 
-I made a mistake and this task is done in the commit 16 when it should be at step 14.
+Change the toolbar color to whatever color you want.
+
+Commit https://github.com/CartoDB/airship-training/commit/65429b6dd292801475e1f32fe229bb12f68a6cf4
+
+`git checkout 65429b6dd292801475e1f32fe229bb12f68a6cf4`
+
+**17. Add responsive layout component**
 
 We're going to add responsiveness to our app just simply using the `as-responsive-content>`
 
@@ -261,6 +263,18 @@ We need to do just three simple things:
 
 Et voilà! Responsive layout working!
 
-Commit https://github.com/CartoDB/airship-training/commit/204e55664322ead3e8f62d7616a93ed97dd8784d
+Commit https://github.com/CartoDB/airship-training/commit/5cf54becdd3e492562d5eef9f24a4f6ad1864448
 
-`git checkout 16-responsive`
+`git checkout 5cf54becdd3e492562d5eef9f24a4f6ad1864448`
+
+**18. Add histogram widget**
+
+Commit https://github.com/CartoDB/airship-training/commit/29c29ab2d518f856bf26a7bd806fd7593e3a0e81
+
+`git checkout 29c29ab2d518f856bf26a7bd806fd7593e3a0e81`
+
+**19. Add color ramp to categories**
+
+Commit https://github.com/CartoDB/airship-training/commit/904c4c25cb1923920d6cf941caebbf4ca278ab12
+
+`git checkout 904c4c25cb1923920d6cf941caebbf4ca278ab12`
