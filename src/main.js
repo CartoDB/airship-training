@@ -1,7 +1,7 @@
 function onLoad () {
   changeToolbarColor();
   initMapboxGL();
-  loadMap(onCategoriesChanged, onAveragePriceChanged);
+  loadMap(onCategoriesChanged, onAveragePriceChanged, onPriceChanged);
   handleCategoriesSelected();
   handleTypeSelector();
 }
@@ -26,6 +26,19 @@ function onAveragePriceChanged (averagePrice) {
   const formulaTextElement = document.getElementById('formula-number');
   const formattedText = `${averagePrice.toFixed(2)}$`;
   formulaTextElement.textContent = formattedText;
+}
+
+function onPriceChanged (price) {
+  var histogramWidget = document.getElementById('price');
+  const data = price.map(bin => {
+    // We need to map the format returned by VL to the format needed by Airship
+    return {
+      start: bin.x[0],
+      end: bin.x[1],
+      value: bin.y
+    };
+  });
+  histogramWidget.data = data;
 }
 
 function handleCategoriesSelected () {
