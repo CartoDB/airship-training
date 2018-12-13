@@ -74,7 +74,7 @@ Airship comes with three packages:
 - Components: Widgets ready-to-use. Shipped as Web Components to be able to be integrated with any framework.
 - Icons: icon library.
 
-The documentation is for now at http://airship-integration.developers.carto-staging.com/developers/airship/
+The documentation is for now at https://carto.com/developers/airship/
 
 The documentation is divided in:
 - Guides: the best place to start with Airship. Follow these guides to get a glance of what Airship is and how to use it in your apps.
